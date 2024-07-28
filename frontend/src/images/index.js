@@ -1,0 +1,18 @@
+import site_logo from './logo.png'
+import loginbg from './Login.jpg'
+import discover_1 from './discover-1.jpg'
+import discover_2 from './discover-2.jpg'
+import discover_3 from './discover-3.jpg'
+import gallery_1 from './gallery-1.jpg'
+import gallery_2 from './gallery-2.jpg'
+import gallery_3 from './gallery-3.jpg'
+import gallery_4 from './gallery-4.jpg'
+import gallery_5 from './gallery-5.jpg'
+import userimg from './User.png'
+import demo from './planedemo.jpg'
+import aboutimg from './aboutimg.jpg'
+import hote_img from './hotel.jpg'
+import food_img from './food.jpg'
+import place_img from './place.jpg'
+
+export  {site_logo ,aboutimg, loginbg, discover_1, discover_2, discover_3, gallery_1, gallery_2, gallery_3, gallery_4, gallery_5, userimg, demo,hote_img,food_img,place_img}

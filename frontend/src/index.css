@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(22, 22, 23);
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(to top, #1d286d, #004b8e, #006ca6, #008db7, #00aec2, #00b6cf, #00bddc, #00c5e9, #00b1fb, #0096ff, #7c71f3, #ba35c7);
+    border: 5px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+section  .active{
+    border-right: 4px solid white;
+    background: rgb(45, 51,89);
+    color: white;
+}
+.sidebarmenu  .active{
+    border-right: 4px solid white;
+    background: rgb(45, 51,89);
+    color: white;
+}
+
