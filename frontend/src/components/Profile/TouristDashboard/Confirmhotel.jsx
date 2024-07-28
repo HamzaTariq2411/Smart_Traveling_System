@@ -276,7 +276,7 @@ const Confirmhotel = () => {
                 <h1 className="text-center py-4">Something went wrong</h1>
               ) : filteredRooms?.length === 0 ? (
                 <h1 className="text-center">
-                  No rooms found matching your criteria
+                  No room found 
                 </h1>
               ) : (
                 filteredRooms?.map((room) => (

@@ -215,6 +215,11 @@ const SignatureSights = () => {
         onClose={handleModalClose}
         onConfirm={handleModalConfirm}
       />
+      {filteredData.length === 0 && (
+        <div className="text-center mt-4">
+          <p>No place found.</p>
+        </div>
+      )}
       <ul className="flex flex-wrap justify-center gap-6">
         {filteredData?.slice(0, visibleItems)?.map((place) => (
           <li

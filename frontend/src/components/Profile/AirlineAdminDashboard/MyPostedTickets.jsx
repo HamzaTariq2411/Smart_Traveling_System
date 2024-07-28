@@ -110,7 +110,9 @@ const MyPostedTickets = () => {
           {loading ? (
             <Loader />
           ) : error ? (
-            <h1 className="text-center">Something went wrong</h1>
+            <h1 className="text-center py-4">Something went wrong</h1>
+          ) : tickets.length === 0 ? (
+            <h1 className="text-center py-4">No ticket found</h1>
           ) : (
             tickets.map((ticket) => (
               <div

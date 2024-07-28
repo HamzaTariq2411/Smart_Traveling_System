@@ -95,7 +95,9 @@ const AllBookedTickets = () => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <h1 className="text-center">Something went wrong</h1>
+          <h1 className="text-center py-4">Something went wrong</h1>
+        ) : myBookings.length === 0 ? (
+          <h1 className="text-center py-4">No booking found</h1>
         ) : (
           myBookings.map((booking) => {
             const departureTime = new Date(booking.departureTime);

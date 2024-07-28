@@ -55,6 +55,9 @@ const Confirmcraft = () => {
   useEffect(() => {
     const filterTickets = () => {
       const filtered = tickets.filter((ticket) => {
+        const currentDateTime = new Date();
+        const departureTime = new Date(ticket.departureTime);
+
         const matchesDeparture =
           searchCriteria.departure === "" ||
           ticket.departure
@@ -79,6 +82,7 @@ const Confirmcraft = () => {
           ticket.businessClass > 0 ||
           ticket.economyClass > 0 ||
           ticket.firstClass > 0;
+        const isFutureDeparture = departureTime >= currentDateTime;
 
         return (
           matchesDeparture &&
@@ -86,7 +90,8 @@ const Confirmcraft = () => {
           matchesDate &&
           matchesMinPrice &&
           matchesMaxPrice &&
-          hasAvailableSeats
+          hasAvailableSeats &&
+          isFutureDeparture
         );
       });
       setFilteredTickets(filtered);
@@ -191,6 +196,8 @@ const Confirmcraft = () => {
               <Loader />
             ) : error ? (
               <h1 className="text-center py-4">Something went wrong</h1>
+            ) : filteredTickets.length === 0 ? (
+              <h1 className="text-center py-4">No ticket found</h1>
             ) : (
               filteredTickets?.map((ticket) => (
                 <div

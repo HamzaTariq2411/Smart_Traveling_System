@@ -147,7 +147,9 @@ const MyRooms = () => {
           {loading ? (
             <Loader />
           ) : error ? (
-            <h1>Something went wrong</h1>
+            <h1 className="text-center py-4">Something went wrong</h1>
+          ) : filteredRooms.length === 0 ? (
+            <h1 className="text-center py-4">No room found</h1>
           ) : (
             filteredRooms?.map((room) => (
               <div
