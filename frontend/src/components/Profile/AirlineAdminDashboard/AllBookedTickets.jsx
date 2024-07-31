@@ -45,11 +45,14 @@ const AllBookedTickets = () => {
   const getMyBookings = async () => {
     setLoading(true);
     try {
-      const result = await axios.get(`${baseUrl}/api/mybookedtickets`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const result = await axios.get(
+        `${baseUrl}/api/bookings/mybookedtickets`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (result.status === 200) {
         setMyBookings(result.data);
         setLoading(false);
