@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 text-black bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="pl-12 px-2 fixed inset-0 text-black bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-4">Location Permission</h2>
         <p className="mb-4">
@@ -191,7 +191,7 @@ const SignatureSights = () => {
   };
 
   return (
-    <div className="ml-14 px-4 py-8">
+    <div className="ml-10 px-4 py-8">
       <h1 className="sm:text-3xl text-2xl font-bold mb-8 text-center ">
         Famous Places
       </h1>
@@ -201,7 +201,7 @@ const SignatureSights = () => {
           placeholder="Search by name, city, or country"
           value={searchQuery}
           onChange={handleSearchChange}
-          className=" px-4 md:w-4/5 w-auto py-2 mb-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-black h-10"
+          className=" px-1 md:w-4/5 w-auto py-2 mb-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-black h-10"
         />
         <button
           onClick={handleShowNearestPlaces}

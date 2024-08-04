@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="pl-12 px-2 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-4 text-black">
           Location Permission
@@ -204,7 +204,7 @@ const CuisineCompass = () => {
           placeholder="Search by name, city, or country"
           value={searchQuery}
           onChange={handleSearchChange}
-          className=" px-4 md:w-4/5 w-auto py-2 mb-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-black h-10"
+          className="px-1 md:w-4/5 w-auto py-2 mb-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-black h-10"
         />
         <button
           onClick={handleShowNearestRestaurants}
