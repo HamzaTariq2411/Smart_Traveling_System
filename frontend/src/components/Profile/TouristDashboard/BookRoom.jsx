@@ -48,7 +48,7 @@ const BookRoom = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 ml-14">
+    <div className="flex flex-col items-center justify-center min-h-svh p-4 ml-14">
       <h1 className="text-center text-4xl my-3">Book here</h1>
       <div className="w-full max-w-md text-black bg-white shadow-lg rounded-lg overflow-hidden">
         {loading ? (

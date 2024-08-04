@@ -39,7 +39,7 @@ const Signup = () => {
     });
   };
   const handleSubmit = async (e) => {
-    setLoading(true)
+    setLoading(true);
     e.preventDefault();
     const formData = new FormData();
     formData.append("role", user.role);
@@ -56,7 +56,7 @@ const Signup = () => {
         body: formData,
       });
       if (response.ok === true) {
-        setLoading(false)
+        setLoading(false);
         const res_data = await response.json();
         storeTokenInLS(res_data.token);
         setUser({
@@ -71,21 +71,21 @@ const Signup = () => {
         toast.success("SignUp Successfully");
         navigate("/profile");
       } else {
-        setLoading(false)
+        setLoading(false);
         const res_data = await response.json();
         toast.dismiss();
         toast.error(res_data.msg);
       }
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       const firstError = error.inner[0];
       toast.dismiss();
       toast.error(firstError.message);
     }
   };
   return (
-    <div className="text-white bg-cover bg-fixed bg-Signup min-h-screen overflow-y-auto">
-      <div className="flex items-center justify-center w-full min-h-screen bg-gray-900 bg-opacity-70 mix-blend-normal overflow-y-auto">
+    <div className="text-white bg-cover bg-fixed bg-Signup min-h-svh overflow-y-auto">
+      <div className="flex items-center justify-center w-full min-h-svh bg-gray-900 bg-opacity-70 mix-blend-normal overflow-y-auto">
         <NavLink to="/" className="fixed top-2 left-2 text-2xl">
           <FaHome />
         </NavLink>

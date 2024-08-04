@@ -7,7 +7,7 @@ const WelcomePage = () => {
   const { user } = useAuth();
 
   return (
-    <div className="flex justify-center flex-col items-center align-middle h-screen ml-14">
+    <div className="flex justify-center flex-col items-center align-middle min-h-svh ml-14">
       <div className="w-2/4 flex flex-col justify-center items-center gap-4">
         <img
           src={`${baseUrl}/images/${user?.image}`}

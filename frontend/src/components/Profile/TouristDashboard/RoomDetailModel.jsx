@@ -7,7 +7,7 @@ import { baseUrl } from "../../helper";
 
 const RoomDetailModel = ({ setShowModel, room }) => {
   return (
-    <div className="h-screen overflow-y-auto">
+    <div className="min-h-svh overflow-y-auto">
       <div className="p-4 ml-10 ">
         <div className="max-w-md mx-auto bg-white sm:p-8 p-5 rounded shadow-lg relative">
           <div

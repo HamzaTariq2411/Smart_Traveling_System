@@ -10,7 +10,7 @@ import { FaHome } from "react-icons/fa";
 import { baseUrl } from "../components/helper";
 
 const Login = () => {
-  const[loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { storeTokenInLS } = useAuth();
   const [user, setUser] = useState({
@@ -30,7 +30,7 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await fetch(`${baseUrl}/api/login`, {
         method: "POST",
@@ -40,7 +40,7 @@ const Login = () => {
         body: JSON.stringify(user),
       });
       if (response.ok === true) {
-        setLoading(false)
+        setLoading(false);
         const res_data = await response.json();
         storeTokenInLS(res_data.token);
         toast.dismiss();
@@ -48,12 +48,12 @@ const Login = () => {
         navigate("/profile");
       } else {
         const res_data = await response.json();
-        setLoading(false)
+        setLoading(false);
         toast.dismiss();
         toast.error(res_data.msg);
       }
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       toast.dismiss();
       toast.error("Something went wrong");
       console.log("Error in login", error);
@@ -66,11 +66,11 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="flex items-center justify-center min-h-screen w-full px-10 text-white absolute bg-gray-900 bg-opacity-80">
+    <div className="flex items-center justify-center min-h-svh w-full px-10 text-white absolute bg-gray-900 bg-opacity-80">
       <img
         src={loginbg}
         alt=""
-        className="w-full min-h-screen object-cover absolute mix-blend-overlay"
+        className="w-full min-h-svh object-cover absolute mix-blend-overlay"
       />
       <NavLink to="/" className="fixed top-2 left-2 text-2xl">
         <FaHome />
@@ -144,7 +144,7 @@ const Login = () => {
             type="submit"
             disabled={loading}
           >
-          {loading ? "Loading...." : "Log In"}
+            {loading ? "Loading...." : "Log In"}
           </button>
           <div className="text-center mt-4 text-xs sm:text-sm md:text-base">
             <p>

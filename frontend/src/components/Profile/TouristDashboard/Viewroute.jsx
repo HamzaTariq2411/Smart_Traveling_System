@@ -180,7 +180,7 @@ function Viewroute() {
   }
 
   return (
-    <div className="h-screen w-screen relative text-black">
+    <div className="h-svh w-screen relative text-black">
       <div className="h-full w-full">
         <GoogleMap
           center={center}

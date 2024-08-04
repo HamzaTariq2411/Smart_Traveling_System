@@ -62,7 +62,7 @@ const BookedTickets = () => {
   };
 
   return (
-    <div className="min-h-screen ml-14 bg-transparent">
+    <div className="min-h-svh ml-14 bg-transparent">
       <div className="text-center text-2xl py-5">My Bookings</div>
       <div className="flex flex-wrap justify-around md:mx-16 mr-4 gap-1 my-5">
         {loading ? (

@@ -37,7 +37,7 @@ const Sidebar = ({ isopen, setIsopen, toggle }) => {
               damping: 11,
             },
           }}
-          className="text-white h-screen bg-[#100E1C] overflow-y-auto overflow-x-hidden"
+          className="text-white min-h-svh bg-[#100E1C] overflow-y-auto overflow-x-hidden"
         >
           <div className="flex items-center content-center justify-between whitespace-nowrap py-3.5 px-2.5 relative ">
             <AnimatePresence>
@@ -86,7 +86,7 @@ const Sidebar = ({ isopen, setIsopen, toggle }) => {
                         <motion.div
                           variants={showAnimation}
                           initial="hidden"
-                          animate="show" 
+                          animate="show"
                           exit="hidden"
                           className="md:text-lg text-base whitespace-nowrap"
                         >

@@ -13,9 +13,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-cover bg-fixed bg-Profile">
+    <div className="relative min-h-svh bg-cover bg-fixed bg-Profile">
       <GoToTop />
-      <div className="flex w-full min-h-screen bg-gray-900 bg-opacity-40">
+      <div className="flex w-full min-h-svh bg-gray-900 bg-opacity-40">
         <div className="fixed z-50">
           <Sidebar setIsopen={setIsopen} isopen={isopen} toggle={toggle} />
         </div>

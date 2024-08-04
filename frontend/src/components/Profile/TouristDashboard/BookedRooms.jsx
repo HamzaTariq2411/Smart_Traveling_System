@@ -64,7 +64,7 @@ const BookedRooms = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-svh">
       <div className="text-center text-2xl py-5">My Booking</div>
       <div className="flex flex-wrap justify-around md:mx-16 ml-14 mr-4 gap-1 my-5">
         {loading ? (
