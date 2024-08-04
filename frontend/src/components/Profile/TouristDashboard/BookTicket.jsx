@@ -39,8 +39,8 @@ const BookTicket = ({ ticketData, setShowModel, fetchData }) => {
 
   const bookFlight = async () => {
     if (!ticketClass) {
-      return toast.dismiss();
-      toast.error("Please select the type of ticket");
+       toast.dismiss();
+       return toast.error("Please select the type of ticket");
     }
     if (numberOfPassengers <= 0) {
       return setPassengerError(

@@ -1,5 +1,4 @@
 import { TbBrandBooking } from "react-icons/tb";
-import { MdFavoriteBorder } from "react-icons/md";
 import { LuMapPin } from "react-icons/lu";
 import { RiProductHuntLine } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";

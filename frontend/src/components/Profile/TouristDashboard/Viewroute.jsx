@@ -201,7 +201,11 @@ function Viewroute() {
           {path.length > 0 && (
             <Polyline
               path={path}
-              options={{ strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2 }}
+              options={{
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+              }}
             />
           )}
           {userLocation && (
@@ -209,7 +213,7 @@ function Viewroute() {
           )}
         </GoogleMap>
       </div>
-      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-md z-10">
+      <div className="ml-6 absolute top-2 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-md z-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-2 space-y-2 md:space-y-0 md:space-x-2">
           <Autocomplete>
             <input
@@ -229,7 +233,7 @@ function Viewroute() {
               onChange={(e) => setDestination(e.target.value)}
             />
           </Autocomplete>
-          
+
           <button
             onClick={clearRoute}
             className="p-2 bg-red-500 text-white rounded"
@@ -237,37 +241,38 @@ function Viewroute() {
             <FaTimes />
           </button>
         </div>
-        <div className="flex justify-between items-center mb-2 space-x-2">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-2 space-y-2 sm:space-y-0 sm:space-x-2">
           <button
             onClick={() => {
               originRef.current.value = "";
               getCurrentLocation();
             }}
-            className="p-2 bg-blue-500 text-white rounded"
+            className="p-2 sm:p-3 lg:p-4 bg-blue-500 text-white text-sm sm:text-base lg:text-lg rounded w-full sm:w-auto"
           >
             Use My Location
           </button>
           <button
             onClick={calculateRoute}
-            className="p-2 bg-green-500 text-white rounded"
+            className="p-2 sm:p-3 lg:p-4 bg-green-500 text-white text-sm sm:text-base lg:text-lg rounded w-full sm:w-auto"
           >
             Calculate Route
           </button>
           <button
             onClick={startTracking}
             disabled={tracking || origin === "" || destination === ""}
-            className="p-2 bg-green-500 text-white rounded disabled:bg-gray-400"
+            className="p-2 sm:p-3 lg:p-4 bg-green-500 text-white text-sm sm:text-base lg:text-lg rounded w-full sm:w-auto disabled:bg-gray-400"
           >
             Start Travel
           </button>
           <button
             onClick={stopTracking}
             disabled={!tracking}
-            className="p-2 bg-red-500 text-white rounded disabled:bg-gray-400"
+            className="p-2 sm:p-3 lg:p-4 bg-red-500 text-white text-sm sm:text-base lg:text-lg rounded w-full sm:w-auto disabled:bg-gray-400"
           >
             Stop Travel
           </button>
         </div>
+
         <div className="flex items-center justify-around ">
           <span>Distance: {distance}</span>
           <span>Duration: {duration}</span>

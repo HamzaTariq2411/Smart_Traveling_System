@@ -9,6 +9,7 @@ import { FaHome } from "react-icons/fa";
 import { baseUrl } from "../components/helper";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const { isLoggedIn } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [userImage, setuserImage] = useState();
@@ -38,6 +39,7 @@ const Signup = () => {
     });
   };
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const formData = new FormData();
     formData.append("role", user.role);
@@ -54,6 +56,7 @@ const Signup = () => {
         body: formData,
       });
       if (response.ok === true) {
+        setLoading(false)
         const res_data = await response.json();
         storeTokenInLS(res_data.token);
         setUser({
@@ -68,11 +71,13 @@ const Signup = () => {
         toast.success("SignUp Successfully");
         navigate("/profile");
       } else {
+        setLoading(false)
         const res_data = await response.json();
         toast.dismiss();
         toast.error(res_data.msg);
       }
     } catch (error) {
+      setLoading(false)
       const firstError = error.inner[0];
       toast.dismiss();
       toast.error(firstError.message);
@@ -191,8 +196,9 @@ const Signup = () => {
               className=" bg-white text-black border-none font-semibold text-xs px-3 py-2 md:px-5 md:py-3 rounded-md border-transparent cursor-pointer transition duration-300 ease-in-out hover:text-white hover:border-white hover:bg-opacity-50 hover:bg-black
             my-3 "
               type="submit"
+              disabled={loading}
             >
-              Sign Up
+              {loading ? "Loading..." : "Sign Up"}
             </button>
             <div className="text-center mt-2 text-xs sm:text-sm md:text-base">
               <p>

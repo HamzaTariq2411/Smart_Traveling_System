@@ -10,6 +10,7 @@ import { FaHome } from "react-icons/fa";
 import { baseUrl } from "../components/helper";
 
 const Login = () => {
+  const[loading,setLoading]=useState(false)
   const navigate = useNavigate();
   const { storeTokenInLS } = useAuth();
   const [user, setUser] = useState({
@@ -29,6 +30,7 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await fetch(`${baseUrl}/api/login`, {
         method: "POST",
@@ -38,6 +40,7 @@ const Login = () => {
         body: JSON.stringify(user),
       });
       if (response.ok === true) {
+        setLoading(false)
         const res_data = await response.json();
         storeTokenInLS(res_data.token);
         toast.dismiss();
@@ -45,10 +48,12 @@ const Login = () => {
         navigate("/profile");
       } else {
         const res_data = await response.json();
+        setLoading(false)
         toast.dismiss();
         toast.error(res_data.msg);
       }
     } catch (error) {
+      setLoading(false)
       toast.dismiss();
       toast.error("Something went wrong");
       console.log("Error in login", error);
@@ -137,8 +142,9 @@ const Login = () => {
           <button
             className="mt-4 bg-white text-black border-none font-semibold text-xs px-3 py-2 md:px-5 md:py-3 rounded-md border-transparent cursor-pointer transition duration-300 ease-in-out hover:text-white hover:border-white hover:bg-opacity-50 hover:bg-black"
             type="submit"
+            disabled={loading}
           >
-            Log In
+          {loading ? "Loading...." : "Log In"}
           </button>
           <div className="text-center mt-4 text-xs sm:text-sm md:text-base">
             <p>
