@@ -10,8 +10,8 @@ import airlineRouter from './routers/airlineRoute.js';
 const app = express();
 
 const corsOption = {
-    // origin:"https://smart-traveling-system.vercel.app",
-    origin:"http://localhost:3000",
+    origin:"https://smart-traveling-system.vercel.app",
+    // origin:"http://localhost:3000",
     methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
     cedentials:true,
 }
